@@ -13,5 +13,9 @@ export default {
 <style scoped>
 .the-button {
   cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary, #545454);
+  color: white;
 }
 </style>

@@ -6,8 +6,10 @@
     }"
   >
     <input @change="checkTask" type="checkbox" :checked="done" />
-    <li>{{ title }}</li>
-    <the-button @click="removeTask">X</the-button>
+
+    <h3 class="title-task">{{ title }}</h3>
+    <the-button class="remove-button" @click="removeTask">X</the-button>
+    <the-button class="edit-button" @click="editTask">edit</the-button>
   </div>
 </template>
 
@@ -24,6 +26,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    edit: {
+      type: Boolean,
+      default: false,
+    },
   },
   name: "TaskItem",
   components: {
@@ -32,6 +38,9 @@ export default {
   methods: {
     removeTask() {
       this.$emit("remove");
+    },
+    editTask() {
+      this.$emit("edit");
     },
     checkTask(event) {
       this.$emit("check", event.target.checked);
@@ -46,5 +55,8 @@ export default {
 }
 .completed {
   background-color: green;
+}
+.title-task {
+  color: white;
 }
 </style>

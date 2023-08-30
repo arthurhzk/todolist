@@ -14,9 +14,12 @@ export default {
 .container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  max-width: 600px;
-  background-color: #3f72af;
+  width: 600px;
+  min-height: 712px;
+  background-color: #9bd77e;
   flex-direction: column;
+  margin-top: 80px;
+  border-radius: 8px;
+  box-shadow: 20px;
 }
 </style>
